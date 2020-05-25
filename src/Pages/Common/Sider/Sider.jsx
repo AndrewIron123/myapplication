@@ -1,7 +1,9 @@
-import { Menu, Switch } from 'antd';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
-import React, { Component } from 'react';
 
+import React, { Component } from 'react';
+import { Menu, Layout } from 'antd';
+import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+
+const LayoutSider = Layout.Sider;
 const { SubMenu } = Menu;
 
 class Sider extends Component {
@@ -19,37 +21,33 @@ class Sider extends Component {
 
     render() {
         return (
-            <>
+            <LayoutSider width={200} className="site-layout-background">
                 <Menu
-                    theme={this.state.theme}
-                    onClick={this.handleClick}
-                    style={{ width: 256 }}
-                    defaultOpenKeys={['sub1']}
-                    selectedKeys={[this.state.current]}
                     mode="inline"
+                    defaultSelectedKeys={['1']}
+                    defaultOpenKeys={['sub1']}
+                    style={{ height: '100%', borderRight: 0 }}
                 >
-                    <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
-                        <Menu.Item key="1">Option 1</Menu.Item>
-                        <Menu.Item key="2">Option 2</Menu.Item>
-                        <Menu.Item key="3">Option 3</Menu.Item>
-                        <Menu.Item key="4">Option 4</Menu.Item>
+                    <SubMenu key="sub1" icon={<UserOutlined />} title="subnav 1">
+                        <Menu.Item key="1">option1</Menu.Item>
+                        <Menu.Item key="2">option2</Menu.Item>
+                        <Menu.Item key="3">option3</Menu.Item>
+                        <Menu.Item key="4">option4</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub2" icon={<AppstoreOutlined />} title="Navigation Two">
-                        <Menu.Item key="5">Option 5</Menu.Item>
-                        <Menu.Item key="6">Option 6</Menu.Item>
-                        <SubMenu key="sub3" title="Submenu">
-                            <Menu.Item key="7">Option 7</Menu.Item>
-                            <Menu.Item key="8">Option 8</Menu.Item>
-                        </SubMenu>
+                    <SubMenu key="sub2" icon={<LaptopOutlined />} title="subnav 2">
+                        <Menu.Item key="5">option5</Menu.Item>
+                        <Menu.Item key="6">option6</Menu.Item>
+                        <Menu.Item key="7">option7</Menu.Item>
+                        <Menu.Item key="8">option8</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub4" icon={<SettingOutlined />} title="Navigation Three">
-                        <Menu.Item key="9">Option 9</Menu.Item>
-                        <Menu.Item key="10">Option 10</Menu.Item>
-                        <Menu.Item key="11">Option 11</Menu.Item>
-                        <Menu.Item key="12">Option 12</Menu.Item>
+                    <SubMenu key="sub3" icon={<NotificationOutlined />} title="subnav 3">
+                        <Menu.Item key="9">option9</Menu.Item>
+                        <Menu.Item key="10">option10</Menu.Item>
+                        <Menu.Item key="11">option11</Menu.Item>
+                        <Menu.Item key="12">option12</Menu.Item>
                     </SubMenu>
                 </Menu>
-            </>
+            </LayoutSider>
         );
     }
 }

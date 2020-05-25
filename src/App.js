@@ -21,7 +21,9 @@ export default function App() {
             <Users />
           </Route>
           <Route path="/">
-            <Layout component={Home} />
+            <Layout>
+              <Home />
+            </Layout>
           </Route>
         </Switch>
       </div>
