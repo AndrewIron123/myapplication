@@ -28,14 +28,12 @@ class Sider extends Component {
             <LayoutSider width={200} className="site-layout-background">
                 <Menu
                     mode="inline"
-                    defaultSelectedKeys={['1']}
                     defaultOpenKeys={['sub1']}
                     style={{ height: '100%', borderRight: 0 }}
                 >
-                    <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Dane z API">
+                    <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Praca z API">
                         <Menu.Item key="1"><Link to="/posts">Posty</Link></Menu.Item>
                         <Menu.Item key="2"><Link to="/comments">Komentarze</Link></Menu.Item>
-                        <Menu.Item key="5"><Link to="/tasks">Zadania</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
             </LayoutSider>

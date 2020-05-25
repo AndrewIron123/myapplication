@@ -33,10 +33,9 @@ class Comments extends Component {
                     renderItem={item => (
                         <li>
                             <Comment
-                                author={item.name}
+                                author={"Anonim"}
                                 avatar={<UserOutlined />}
                                 content={item.body}
-                                datetime={item.datetime}
                             />
                         </li>
                     )}
