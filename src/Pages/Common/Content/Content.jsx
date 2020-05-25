@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
-class Content extends Component {
-    state = {}
-    render() {
-        return <span className="layout__content">
-            {this.props.children}
-        </span>;
-    }
+const Content = (props) => {
+    const { children } = props;
+    return (
+        <div>
+            {children}
+        </div>
+    );
+}
+
+MyComponent.propTypes = {
+    children: PropTypes.array
 }
 
 export default Content;

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import { Menu, Layout } from 'antd';
-import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
+import { PlayCircleOutlined, LaptopOutlined, NotificationOutlined, BookOutlined, RiseOutlined } from '@ant-design/icons';
 
 const LayoutSider = Layout.Sider;
 const { SubMenu } = Menu;
@@ -29,7 +29,7 @@ class Sider extends Component {
                     defaultOpenKeys={['sub1']}
                     style={{ height: '100%', borderRight: 0 }}
                 >
-                    <SubMenu key="sub1" icon={<UserOutlined />} title="Rozrywka">
+                    <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Rozrywka">
                         <Menu.Item key="1">Gry</Menu.Item>
                         <Menu.Item key="2">Filmy</Menu.Item>
                         <Menu.Item key="3">Muzyka</Menu.Item>
@@ -47,23 +47,17 @@ class Sider extends Component {
                         <Menu.Item key="11">Prawo</Menu.Item>
                         <Menu.Item key="12">Informacje</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub4" icon={<NotificationOutlined />} title="Nauka">
+                    <SubMenu key="sub4" icon={<BookOutlined />} title="Nauka">
                         <Menu.Item key="13">Zwierzeta</Menu.Item>
                         <Menu.Item key="14">Matematyka</Menu.Item>
                         <Menu.Item key="15">Fizyka</Menu.Item>
                         <Menu.Item key="16">Historia</Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub5" icon={<NotificationOutlined />} title="Na czasie">
+                    <SubMenu key="sub5" icon={<RiseOutlined />} title="Na czasie">
                         <Menu.Item key="17">TOP1</Menu.Item>
                         <Menu.Item key="18">TOP2</Menu.Item>
                         <Menu.Item key="19">TOP3</Menu.Item>
                         <Menu.Item key="20">TOP4</Menu.Item>
-                    </SubMenu>
-                    <SubMenu key="sub3" icon={<NotificationOutlined />} title="Polityka">
-                        <Menu.Item key="9">Wybory</Menu.Item>
-                        <Menu.Item key="10">Obrady</Menu.Item>
-                        <Menu.Item key="11">Prawo</Menu.Item>
-                        <Menu.Item key="12">Informacje</Menu.Item>
                     </SubMenu>
                 </Menu>
             </LayoutSider>
