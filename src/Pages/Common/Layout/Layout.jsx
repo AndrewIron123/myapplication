@@ -11,6 +11,7 @@ const { Content } = AntLayout;
 class Layout extends Component {
     state = {}
     render() {
+        console.log(this.props.children);
         return <AntLayout>
             <Header className="header" />
             <AntLayout>

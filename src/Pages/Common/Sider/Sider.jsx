@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { Menu, Layout } from 'antd';
 import { PlayCircleOutlined, LaptopOutlined, NotificationOutlined, BookOutlined, RiseOutlined } from '@ant-design/icons';
+import {
+    Link
+} from 'react-router-dom';
 
 const LayoutSider = Layout.Sider;
 const { SubMenu } = Menu;
@@ -29,14 +32,14 @@ class Sider extends Component {
                     defaultOpenKeys={['sub1']}
                     style={{ height: '100%', borderRight: 0 }}
                 >
-                    <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Rozrywka">
-                        <Menu.Item key="1">Gry</Menu.Item>
-                        <Menu.Item key="2">Filmy</Menu.Item>
-                        <Menu.Item key="3">Muzyka</Menu.Item>
-                        <Menu.Item key="4">Sport</Menu.Item>
+                    <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Dane z API">
+                        <Menu.Item key="1"><Link to="/posts">Posty</Link></Menu.Item>
+                        <Menu.Item key="2"><Link to="/comments">Komentarze</Link></Menu.Item>
+                        <Menu.Item key="3"><Link to="/albums">Albumy</Link></Menu.Item>
+                        <Menu.Item key="4"><Link to="/photos">Zdjecia</Link></Menu.Item>
+                        <Menu.Item key="5"><Link to="/tasks">Zadania</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" icon={<LaptopOutlined />} title="Biznes">
-                        <Menu.Item key="5">Praca</Menu.Item>
                         <Menu.Item key="6">Oszczedzanie</Menu.Item>
                         <Menu.Item key="7">Inwestycje</Menu.Item>
                         <Menu.Item key="8">Prawo</Menu.Item>

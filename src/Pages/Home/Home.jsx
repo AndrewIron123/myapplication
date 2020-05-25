@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import Sider from "./../Common/Sider/Sider";
+import { postService } from "../../Services/postsService";
 class Home extends Component {
-    state = {}
+    state = {};
+    componentDidMount() {
+        postService.getPosts().then(data => console.log(data));
+    }
     render() {
-        return <div>
+        return <div className="pages__home">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin commodo laoreet turpis et ultricies. In in risus sagittis, luctus nunc ac, congue metus. Aliquam odio leo, lacinia a lorem eget, imperdiet posuere dolor. Curabitur nec tempor metus. Quisque dapibus ultricies massa tristique porta. Sed id magna ante. Pellentesque sit amet velit ac metus placerat luctus. Morbi scelerisque lacus tortor. Pellentesque et nibh massa. Donec dignissim metus ac augue tincidunt, a rutrum augue posuere. Donec malesuada leo eros, nec lobortis neque eleifend eget. Donec pharetra mauris et purus euismod elementum. Maecenas volutpat consequat felis at hendrerit. Donec laoreet dapibus tellus at fringilla. Etiam ex neque, fermentum a leo id, laoreet auctor risus. Proin dictum finibus sapien egestas aliquet.
 
 In eget accumsan dolor, eu rhoncus mi. In eget congue metus. Cras vehicula dolor justo, quis fringilla dolor tristique eu. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque at urna nec tortor suscipit tempor nec in justo. Proin lobortis tortor neque, eu molestie lorem faucibus ut. Nulla facilisi. Ut eu luctus libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent feugiat consequat nunc eu cursus. Etiam sit amet sem ligula. Nam at pellentesque eros. Nunc feugiat nisl eu purus ullamcorper ultricies. Nunc accumsan nisl a quam ultricies consectetur. Mauris quam est, suscipit vitae dui nec, auctor sodales lectus.
