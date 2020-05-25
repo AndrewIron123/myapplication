@@ -34,6 +34,15 @@ class Posts extends Component {
                 dataIndex: 'body',
                 key: 'body',
             },
+            {
+                title: 'Action',
+                key: 'action',
+                render: (text, record, index) => {
+                    return <span>
+                        <a href={"/comments?postId=" + record.id}>Zobacz komentarze</a>
+                    </span>
+                },
+            },
         ];
         return (
             <div className="pages__posts">
