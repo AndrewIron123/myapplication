@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const postService = {
+export const postsService = {
     getPosts,
     getPost
 }
