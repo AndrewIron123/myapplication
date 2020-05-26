@@ -12,22 +12,9 @@ import 'antd/dist/antd.css';
 import { Layout } from './Pages/Common/Layout/Layout';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import { ThemeReducers } from "./Redux/Reducers/ThemeReducers";
 
-const initialState = {
-  theme: true
-};
-
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    case "CHANGE":
-      return {
-        theme: !state.theme
-      }
-    default:
-      return state;
-  }
-}
-const store = createStore(reducer);
+const store = createStore(ThemeReducers.reducer);
 
 export default function App() {
   return (
