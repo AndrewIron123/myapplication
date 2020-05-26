@@ -44,7 +44,7 @@ class Header extends Component {
                     />
                     <span className="layout__header--theme-changer">
                         Zmień motyw(redux) - {this.props.theme ? "jasny" : "ciemny"}
-                        <Switch className="layout__header--theme-changer-switch" onChange={this.handleOnChangeTheme} />
+                        <Switch className="layout__header--theme-changer-switch" onChange={this.handleOnChangeTheme} defaultChecked />
                     </span>
                 </div>
             </>

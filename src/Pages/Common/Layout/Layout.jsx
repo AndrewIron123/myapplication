@@ -8,6 +8,7 @@ import Sider from "./../Sider/Sider";
 const { SubMenu } = Menu;
 const { Content } = AntLayout;
 import { withRouter } from "react-router";
+import { connect } from 'react-redux';
 
 class Layout extends Component {
     state = {}
@@ -38,5 +39,9 @@ class Layout extends Component {
     }
 }
 
-const LayoutWithRouter = withRouter(Layout);
+const mapStateToProps = (state) => ({
+    theme: state.theme
+});
+
+const LayoutWithRouter = withRouter(connect(mapStateToProps)(Layout));
 export { LayoutWithRouter as Layout };
