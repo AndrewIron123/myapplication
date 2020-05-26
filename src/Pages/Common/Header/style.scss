@@ -1,5 +1,8 @@
 .layout__header {
     width: 100%;
-    background: black;
+    background: transparent;
     z-index: 1;
+}
+.layout__header--search-post {
+    min-width: 200px;
 }

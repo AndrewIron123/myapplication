@@ -3,7 +3,8 @@ import axios from 'axios';
 export const postsService = {
     getPosts,
     getPost,
-    createPost
+    createPost,
+    deletePost
 }
 
 function getPosts(params = {}) {
@@ -28,6 +29,14 @@ function createPost(data = {}) {
         method: 'post',
         url: 'https://jsonplaceholder.typicode.com/posts',
         data: data
+    }
+    return axios(options);
+}
+
+function deletePost(number) {
+    const options = {
+        method: 'delete',
+        url: 'https://jsonplaceholder.typicode.com/posts/' + number,
     }
     return axios(options);
 }

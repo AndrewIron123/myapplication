@@ -47,6 +47,10 @@ class Posts extends Component {
         console.log('Failed:', errorInfo);
     };
 
+    handleOnClickDelete = (number) => {
+        postsService.deletePost(number).then(() => { message.info("Post został usunięty") });
+    }
+
     render() {
         const layout = {
             labelCol: {
@@ -84,7 +88,8 @@ class Posts extends Component {
                 key: 'action',
                 render: (text, record, index) => {
                     return <span>
-                        <a href={"/comments?postId=" + record.id}>Zobacz komentarze</a>
+                        <Button><a href={"/comments?postId=" + record.id}>Zobacz komentarze</a></Button>
+                        <Button onClick={() => { this.handleOnClickDelete(record.id) }}>Usuń post</Button>
                     </span>
                 },
             },

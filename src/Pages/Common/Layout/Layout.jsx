@@ -7,11 +7,11 @@ import { Header } from "./../Header/Header";
 import Sider from "./../Sider/Sider";
 const { SubMenu } = Menu;
 const { Content } = AntLayout;
+import { withRouter } from "react-router";
 
 class Layout extends Component {
     state = {}
     render() {
-        console.log(this.props.children);
         return <AntLayout>
             <Header className="header" />
             <AntLayout>
@@ -19,8 +19,7 @@ class Layout extends Component {
                 <AntLayout style={{ padding: '0 24px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item>Home</Breadcrumb.Item>
-                        <Breadcrumb.Item>List</Breadcrumb.Item>
-                        <Breadcrumb.Item>App</Breadcrumb.Item>
+                        <Breadcrumb.Item>{this.props.location && this.props.location.pathname ? this.props.location.pathname.replace('/', '') : ""}</Breadcrumb.Item>
                     </Breadcrumb>
                     <Content
                         className="site-layout-background"
@@ -39,4 +38,5 @@ class Layout extends Component {
     }
 }
 
-export default Layout;
+const LayoutWithRouter = withRouter(Layout);
+export { LayoutWithRouter as Layout };

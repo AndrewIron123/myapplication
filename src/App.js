@@ -9,7 +9,7 @@ import Home from './Pages/Home/Home';
 import { Comments as MyComments } from './Pages/Comments/Comments';
 import Posts from './Pages/Posts/Posts';
 import 'antd/dist/antd.css';
-import Layout from './Pages/Common/Layout/Layout';
+import { Layout } from './Pages/Common/Layout/Layout';
 
 export default function App() {
   return (

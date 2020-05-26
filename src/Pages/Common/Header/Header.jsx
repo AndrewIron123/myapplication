@@ -1,18 +1,41 @@
 import React, { Component } from 'react';
 import "./style.scss";
 import { Menu } from 'antd';
+import { AutoComplete } from 'antd';
+import { postsService } from './../../../Services/postsService';
 
 class Header extends Component {
-    state = {}
+    state = {
+        posts: []
+    }
+
+    componentDidMount() {
+        postsService.getPosts()
+            .then(payload => {
+                if (payload.data && Array.isArray(payload.data)) {
+                    this.setState({
+                        posts: payload.data.map((item) => {
+                            return { value: item.title }
+                        })
+                    });
+                }
+            })
+    }
+
     render() {
+        const { posts } = this.state;
         return (
             <>
-                <div className="logo" />
-                <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-                    <Menu.Item key="1">nav 1</Menu.Item>
-                    <Menu.Item key="2">nav 2</Menu.Item>
-                    <Menu.Item key="3">nav 3</Menu.Item>
-                </Menu>
+                <div className="layout__header">
+                    <AutoComplete
+                        className="layout__header--search-post"
+                        options={posts}
+                        placeholder="Wyszukaj post"
+                        filterOption={(inputValue, option) =>
+                            option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
+                        }
+                    />
+                </div>
             </>
         );
     }

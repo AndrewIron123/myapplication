@@ -2,7 +2,8 @@ import axios from 'axios';
 
 export const commentsService = {
     getComments,
-    getComment
+    getComment,
+    createComment
 }
 
 function getComments(params = {}) {
@@ -18,6 +19,14 @@ function getComment(params = {}, number = 1) {
         method: 'get',
         url: 'https://jsonplaceholder.typicode.com/comments/' + number,
         params: params
+    }
+    return axios(options);
+}
+function createComment(data = {}, postNumber = 1) {
+    const options = {
+        method: 'post',
+        url: 'https://jsonplaceholder.typicode.com/posts/' + postNumber + '/comments',
+        data: data
     }
     return axios(options);
 }
