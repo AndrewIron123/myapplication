@@ -3,7 +3,7 @@ import "./style.scss";
 
 import { Layout as AntLayout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
-import { Header } from "./../Header/Header";
+import Header from "./../Header/Header";
 import Sider from "./../Sider/Sider";
 const { SubMenu } = Menu;
 const { Content } = AntLayout;

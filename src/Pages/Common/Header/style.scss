@@ -6,3 +6,9 @@
 .layout__header--search-post {
     min-width: 200px;
 }
+.layout__header--theme-changer {
+    margin-left: 24px;
+    .layout__header--theme-changer-switch {
+        margin-left: 10px;
+    }
+}

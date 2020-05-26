@@ -3,6 +3,8 @@ import "./style.scss";
 import { Menu } from 'antd';
 import { AutoComplete } from 'antd';
 import { postsService } from './../../../Services/postsService';
+import { Switch } from 'antd';
+import { connect } from 'react-redux';
 
 class Header extends Component {
     state = {
@@ -22,8 +24,13 @@ class Header extends Component {
             })
     }
 
+    handleOnChangeTheme = () => {
+        this.props.dispatch({ type: "CHANGE" });
+    }
+
     render() {
         const { posts } = this.state;
+        console.log(this.props);
         return (
             <>
                 <div className="layout__header">
@@ -35,10 +42,18 @@ class Header extends Component {
                             option.value.toUpperCase().indexOf(inputValue.toUpperCase()) !== -1
                         }
                     />
+                    <span className="layout__header--theme-changer">
+                        Zmień motyw(redux) - {this.props.theme ? "jasny" : "ciemny"}
+                        <Switch className="layout__header--theme-changer-switch" onChange={this.handleOnChangeTheme} />
+                    </span>
                 </div>
             </>
         );
     }
 }
 
-export { Header };
+const mapStateToProps = (state) => ({
+    theme: state.theme
+});
+
+export default connect(mapStateToProps)(Header);
