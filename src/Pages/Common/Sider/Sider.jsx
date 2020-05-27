@@ -6,10 +6,10 @@ import {
     Link
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import "./style.scss";
 
 const LayoutSider = Layout.Sider;
 const { SubMenu } = Menu;
-import "./style.scss";
 
 class Sider extends Component {
     state = {
@@ -58,6 +58,9 @@ class Sider extends Component {
                     <SubMenu key="sub1" icon={<PlayCircleOutlined />} title="Praca z API">
                         <Menu.Item key="1"><Link to="/posts">Posty</Link></Menu.Item>
                         <Menu.Item key="2"><Link to="/comments">Komentarze</Link></Menu.Item>
+                    </SubMenu>
+                    <SubMenu key="sub2" icon={<PlayCircleOutlined />} title="Praca z wewnetrznym API(express)">
+                        <Menu.Item key="3"><Link to="/users">Użytkownicy</Link></Menu.Item>
                     </SubMenu>
                 </Menu>
             </LayoutSider>

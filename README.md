@@ -1,3 +1,5 @@
-## Test
+## Aplikacja React.js
 
-### `Test`
+### `Front npm start w głownym folderze projektu`
+
+### `Backend npm start w folderze API`

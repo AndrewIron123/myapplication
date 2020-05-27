@@ -5,10 +5,10 @@ import { Layout as AntLayout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import Header from "./../Header/Header";
 import Sider from "./../Sider/Sider";
-const { SubMenu } = Menu;
-const { Content } = AntLayout;
 import { withRouter } from "react-router";
 import { connect } from 'react-redux';
+const { SubMenu } = Menu;
+const { Content } = AntLayout;
 
 class Layout extends Component {
     state = {}

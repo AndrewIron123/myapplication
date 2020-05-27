@@ -30,3 +30,4 @@ function createComment(data = {}, postNumber = 1) {
     }
     return axios(options);
 }
+
