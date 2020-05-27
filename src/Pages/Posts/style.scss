@@ -1,0 +1,13 @@
+$green-color: #006600;
+$red-color: #800000;
+
+.ant-btn {
+    &.posts__button--see {
+        font-weight: 600;
+        background: $green-color;
+    }
+    &.posts__button--delete {
+        font-weight: 600;
+        background: $red-color;
+    }
+}

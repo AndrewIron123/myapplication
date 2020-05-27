@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { postsService } from './../../Services/postsService';
 import { Modal, Button, Form, Table, Input, message } from 'antd';
+import './style.scss';
 
 class Posts extends Component {
     state = {
@@ -88,8 +89,8 @@ class Posts extends Component {
                 key: 'action',
                 render: (text, record, index) => {
                     return <span>
-                        <Button><a href={"/comments?postId=" + record.id}>Zobacz komentarze</a></Button>
-                        <Button onClick={() => { this.handleOnClickDelete(record.id) }}>Usuń post</Button>
+                        <Button className="posts__button--see"><a href={"/comments?postId=" + record.id}>Zobacz komentarze</a></Button>
+                        <Button className="posts__button--delete" onClick={() => { this.handleOnClickDelete(record.id) }}>Usuń post</Button>
                     </span>
                 },
             },
